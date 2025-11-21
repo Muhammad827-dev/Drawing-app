@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    background: #f0f0f0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------ Toolbar ------------------ */
+#toolbar {
+    width: 180px;
+    min-width: 140px;
+    background: #f0f0f0;
+    padding: 12px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3 {
+    margin: 6px 0 4px 0;
+    font-size: 14px;
+}
+
+/* ------------------ Colors Grid ------------------ */
+#colors {
+    display: inline-block;
+    gap: 6px;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+/* ------------------ Tool Buttons ------------------ */
+.tool-btn {
+    width: fit-content;
+    padding: 8px 9px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.tool-btn:hover {
+    background: #2b2b2b;
+}
+
+/* Custom button same style as tool buttons */
+#custom-btn {
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* ------------------ Pen Size Slider ------------------ */
+#pen-size {
+    width: 100%;
+}
+
+/* ------------------ Canvas Layout ------------------ */
+#canvas-wrap {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: stretch;
+}
+
+canvas {
+    background: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* ------------------ Shapes Buttons ------------------ */
+.shapes-box{
+    padding: 6px 5px;
+    background: #222;
+    border-radius: 6px;
+}
+
+.shapes-btn {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    background: #222;
+    border: none;
+    cursor: pointer;
+}
+
+.shapes-btn img {
+    width: 15px;
+    height: 15px;
+    pointer-events: none; /* ensures clicking button still works */
+}
+
+.shapes-btn:hover{
+    background-color: #333;
+}
+
+button.shapes-btn:active{
+    transform: scale(0.8);
+}
+
+/* TOOL + SHAPE Buttons Active Fix */
+
+button.tool-btn:active,
+.color-btn:active {
+    transform: scale(0.9);
+    background-color: #000;
+}
+
+
+/* ------------------ Responsive Small Screens ------------------ */
+@media (max-width: 520px) {
+    #toolbar {
+        width: 140px;
+        padding: 8px;
+    }
+
+    #colors {
+        grid-template-columns: repeat(4, 28px);
+        gap: 6px;
+    }
+
+    .color-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tool-btn {
+        font-size: 11px;
+        padding: 6px 6px;
+    }
+    .shapes-btn {
+        width: 34px;
+        height: 34px;
+        padding: 4px;
+    }
+
+    .shapes-btn img {
+        width: 24px;
+        height: 24px;
+    }
+}

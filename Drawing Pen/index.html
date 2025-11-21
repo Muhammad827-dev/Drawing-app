@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <title>Drawing App | Home</title>
+    <style>
+        body{
+            background: url(background.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            margin-top: 40px;
+            gap: 20px;
+        }
+        .btn{
+            width: fit-content;
+            padding: 15px 30px;
+            background: transparent;
+            border: 3px solid white;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease-in-out;
+            color: white;
+            font-weight: 600;
+            font-size: 22px;
+            border-radius: 100px;
+        }
+
+        .btn:hover{
+            border: 3px solid transparent;
+        }
+
+        .btn span{
+            width: 0;
+            height: 100%;
+            background: rgb(0, 183, 255);
+            border-radius: 0 50px 50px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.5s linear;
+        }
+
+        .btn:hover span{
+            width: 100%;
+        }
+        .appear {
+            opacity: 0;
+            transform: translateY(100px);
+            animation: appearAnim 1s ease-out forwards;
+        }
+
+       @keyframes appearAnim {
+       to {
+             opacity: 1;
+             transform: translateY(0);
+         }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <a class="appear" href="https://drawingpen.cybrok.com/templates/index.html" target="_blank">
+        <button class="btn">Open Drawing Studio 🎨<span></span></button></a>
+        <a class="appear" href="https://drawingpen.cybrok.com/templates/index.html" target="_blank">
+            <img src="app.png" alt="Drawing-app" width="70%"></a>
+    </div>
+</body>  
+</html>

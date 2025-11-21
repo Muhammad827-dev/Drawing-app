@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+<title>Drawing App</title>
+</head>
+<body>
+
+<div id="toolbar">
+    <h3>Colors</h3>
+    <div id="colors"></div>
+
+    <button id="custom-btn" class="tool-btn">Color Panel</button>
+
+    <h3>Pen Size</h3>
+    <input type="range" id="pen-size" min="2" max="20" value="2">
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px; margin-top:6px;">
+        <button class="tool-btn" onclick="setTool('normal')">Normal</button>
+        <button style="width: 62%;" class="tool-btn" onclick="setTool('continuous')">Continuous Line</button>
+        <button style="width: 47%;" class="tool-btn" onclick="setTool('dotted')">Dotted Line</button>
+        <button style="width: 47%;" class="tool-btn" onclick="erase()">Eraser</button>
+        <button style="width: 100%; font-size: 14px;" class="tool-btn" onclick="clearCanvas()">Clear</button>
+    </div>
+
+    <h3>Shapes</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:8px; margin-top:6px;" class="shapes-box">
+        <button class="shapes-btn" onclick="setShape('rectangle')">
+            <img src="images/rectangle.png" alt="Rectangle">
+        </button>
+        <button class="shapes-btn" onclick="setShape('circle')">
+            <img src="images/circle.png" alt="Circle">
+        </button>
+        <button class="shapes-btn" onclick="setShape('triangle')">
+            <img src="images/triangle.png" alt="Triangle">
+        </button>
+        </button>
+        <button class="shapes-btn" onclick="setShape('hexagon')">
+            <img src="images/hexagon.png" alt="hexagon">
+        </button>
+                <button class="shapes-btn" onclick="setShape('right-triangle')">
+            <img src="images/right-triangle.png" alt="right triangle">
+        </button>
+        <button class="shapes-btn" onclick="setShape('star')">
+            <img src="images/star.png" alt="star">
+        <button class="shapes-btn" onclick="setShape('pentagon')">
+            <img src="images/pentagon.png" alt="Pentagon">
+        </button>
+        <button class="shapes-btn" onclick="setShape('diamond')">
+            <img src="images/signs.png" alt="diamond">
+        </button>
+        <button style="transform: rotate(-135deg);" class="shapes-btn" onclick="setShape('arrow')">
+            <img src="images/right-arrow.png" alt="arrow">
+        </button>
+         <button style="transform: rotate(45deg);" class="shapes-btn" onclick="setShape('line')">
+            <img src="images/line.png" alt="Line">
+        </button>
+
+    </div>
+</div>
+
+<div id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</htshape
